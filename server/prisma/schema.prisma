@@ -1,0 +1,51 @@
+generator client {
+    provider = "prisma-client-js"
+    output   = "../generated/prisma"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum TransactionType {
+    income
+    expense
+}
+
+model User {
+    id                    String   @id @default(uuid())
+    name                  String   @unique
+    password              String
+    personalWallets       Wallet[] @relation(name: "WalletToOwner")
+    walletsSharedWithUser Wallet[]
+}
+
+model Wallet {
+    id              String        @id @default(uuid())
+    name            String
+    owner           User          @relation(name: "WalletToOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+    ownerId         String
+    usersHaveAccess User[]
+    transactions    Transaction[]
+    invites         Invite[]
+}
+
+model Transaction {
+    id        String          @id @default(uuid())
+    name      String
+    wallet    Wallet          @relation(fields: [walletId], references: [id], onDelete: Cascade)
+    walletId  String
+    amount    Int
+    type      TransactionType
+    createdAt DateTime        @default(now())
+}
+
+model Invite {
+    id        String   @id @default(uuid())
+    wallet    Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+    walletId  String
+    expiresAt DateTime
+    used      Boolean  @default(false)
+    createdAt DateTime @default(now())
+}

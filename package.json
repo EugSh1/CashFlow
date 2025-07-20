@@ -1,0 +1,17 @@
+{
+    "name": "cashflow",
+    "scripts": {
+        "dev": "concurrently \"pnpm run dev:server\" \"pnpm run dev:client\"",
+        "dev:server": "cd server && pnpm run start:dev",
+        "dev:client": "cd client && pnpm run dev",
+        "start": "concurrently \"pnpm run start:server\" \"pnpm run start:client\"",
+        "start:server": "cd server && pnpm run start",
+        "start:client": "cd client && pnpm run build && pnpm run start",
+        "db:start": "cd server && pnpm run db:start",
+        "db:stop": "cd server && pnpm run db:stop"
+    },
+    "packageManager": "pnpm@10.12.1",
+    "devDependencies": {
+        "concurrently": "^9.1.2"
+    }
+}
