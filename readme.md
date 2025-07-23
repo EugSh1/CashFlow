@@ -55,7 +55,7 @@ a modern, intuitive interface.
 
 **Testing:**
 
--   **Jest**: Backend unit and integration testing.
+-   **Jest**: Backend unit testing.
 
 ![Made with](https://go-skill-icons.vercel.app/api/icons?i=nextjs,tailwind,typescript,reactquery,shadcn,nodejs,nestjs,swagger,prisma,postgres,jest&theme=dark)
 
