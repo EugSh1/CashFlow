@@ -17,7 +17,7 @@ import { AuthGuard } from "src/common/guards/auth/auth.guard";
 @Controller("invites")
 @UseGuards(AuthGuard)
 export class InvitesController {
-    constructor(private invitesService: InvitesService) {}
+    constructor(private readonly invitesService: InvitesService) {}
 
     @Get()
     @ApiOkResponse({

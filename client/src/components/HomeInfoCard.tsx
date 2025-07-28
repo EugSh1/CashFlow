@@ -24,7 +24,7 @@ export default function InfoCards({
     lowerInfo,
     className,
     showTrends = true
-}: Props) {
+}: Readonly<Props>) {
     const TrendsIcon = trends === "up" ? TrendingUp : TrendingDown;
 
     return (

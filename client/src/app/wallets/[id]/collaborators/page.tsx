@@ -113,6 +113,8 @@ export default function CollaboratorsPage() {
                                         const isInvalid = used || isExpired;
                                         const inviteUrl = `${window.location.origin}/invite/${id}`;
 
+                                        const usedMessage = used ? "Used" : "Active";
+
                                         return (
                                             <TableRow
                                                 key={id}
@@ -126,11 +128,7 @@ export default function CollaboratorsPage() {
                                                             isInvalid ? "secondary" : "default"
                                                         }
                                                     >
-                                                        {isExpired
-                                                            ? "Expired"
-                                                            : used
-                                                            ? "Used"
-                                                            : "Active"}
+                                                        {isExpired ? "Expired" : usedMessage}
                                                     </Badge>
                                                 </TableCell>
                                                 <TableCell>

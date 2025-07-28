@@ -15,7 +15,7 @@ export default function useCreateWalletMutation() {
 
     const mutateWithToast = createMutateWithToast(mutateAsync, {
         loading: "Creating wallet...",
-        success: (data) => `Wallet \"${data.name}\" created`
+        success: (data) => `Wallet "${data.name}" created`
     });
 
     return { createWallet: mutateWithToast };

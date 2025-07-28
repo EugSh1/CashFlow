@@ -19,7 +19,7 @@ export default function useUpdateTransactionMutation(walletId: string, closeShee
 
     const mutateWithToast = createMutateWithToast(mutateAsync, {
         loading: "Updating transaction...",
-        success: (data) => `Transaction \"${data.name}\" updated`
+        success: (data) => `Transaction "${data.name}" updated`
     });
 
     return { updateTransaction: mutateWithToast };

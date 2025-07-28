@@ -7,7 +7,7 @@ import { UserModel } from "src/users/response-models/user.model";
 
 @Controller("auth")
 export class AuthController {
-    constructor(private authService: AuthService) {}
+    constructor(private readonly authService: AuthService) {}
 
     @Post("register")
     @ApiCreatedResponse({

@@ -9,8 +9,8 @@ import { errorMessages } from "src/constants/errorMessages";
 @Injectable()
 export class TransactionsService {
     constructor(
-        private prismaService: PrismaService,
-        private walletService: WalletsService
+        private readonly prismaService: PrismaService,
+        private readonly walletService: WalletsService
     ) {}
 
     async getTransactionsPaginated(walletId: string, userId: string, page: number) {

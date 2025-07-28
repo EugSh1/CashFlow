@@ -25,7 +25,7 @@ import { UserModel } from "src/users/response-models/user.model";
 @Controller("wallets")
 @UseGuards(AuthGuard)
 export class WalletsController {
-    constructor(private walletsService: WalletsService) {}
+    constructor(private readonly walletsService: WalletsService) {}
 
     @Get()
     @ApiOkResponse({

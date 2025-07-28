@@ -10,7 +10,7 @@ import { UserChangePasswordDto } from "./dto/user-change-password.dto";
 @Controller("users")
 @UseGuards(AuthGuard)
 export class UsersController {
-    constructor(private usersService: UsersService) {}
+    constructor(private readonly usersService: UsersService) {}
 
     @Get("me")
     @ApiOkResponse({

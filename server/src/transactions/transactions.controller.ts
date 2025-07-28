@@ -26,7 +26,7 @@ import { BulkDeleteTransactionsModel } from "./response-models/bulk-delete.trans
 @Controller("transactions")
 @UseGuards(AuthGuard)
 export class TransactionsController {
-    constructor(private transactionsService: TransactionsService) {}
+    constructor(private readonly transactionsService: TransactionsService) {}
 
     @Get()
     @ApiOkResponse({

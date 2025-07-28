@@ -5,7 +5,7 @@ import { isPrismaNotFoundError } from "src/utils/isPrismaNotFoundError";
 
 @Injectable()
 export class InvitesService {
-    constructor(private prismaService: PrismaService) {}
+    constructor(private readonly prismaService: PrismaService) {}
 
     async getInvites(walletId: string, userId: string) {
         const foundWallet = await this.prismaService.wallet.findUnique({

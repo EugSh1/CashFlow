@@ -73,7 +73,7 @@ const ownerMenuItems: MenuItem[] = [
     }
 ];
 
-export default async function WalletSidebar({ walletId }: Props) {
+export default async function WalletSidebar({ walletId }: Readonly<Props>) {
     const cookieStore = cookies();
     const token = (await cookieStore).get("token")?.value;
     const tokenCookieHeader = { headers: { Cookie: `token=${token}` } };

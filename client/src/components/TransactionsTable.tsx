@@ -131,7 +131,7 @@ const TransactionRow = memo(
     }
 );
 
-export default function TransactionsTable({ data, walletId, editTransactionFn }: Props) {
+export default function TransactionsTable({ data, walletId, editTransactionFn }: Readonly<Props>) {
     const { bulkDeleteTransactions } = useBulkDeleteTransactionMutation(walletId);
     const [selectedTransactionIds, setSelectedTransactionIds] = useState<string[]>([]);
 

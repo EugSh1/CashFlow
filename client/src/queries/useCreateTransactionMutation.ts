@@ -24,7 +24,7 @@ export default function useCreateTransactionMutation(walletId: string) {
 
     const mutateWithToast = createMutateWithToast(mutateAsync, {
         loading: "Creating transaction...",
-        success: (data) => `Transaction \"${data.name}\" created`
+        success: (data) => `Transaction "${data.name}" created`
     });
 
     return { createTransaction: mutateWithToast };

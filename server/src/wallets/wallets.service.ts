@@ -7,7 +7,7 @@ import whereWalletOwnerOrHaveAccess from "src/utils/whereWalletOwnerOrHaveAccess
 
 @Injectable()
 export class WalletsService {
-    constructor(private prismaService: PrismaService) {}
+    constructor(private readonly prismaService: PrismaService) {}
 
     async getWallets(userId: string) {
         const wallets = await this.prismaService.wallet.findMany({

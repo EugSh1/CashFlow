@@ -15,7 +15,7 @@ import * as bcrypt from "bcrypt";
 
 @Injectable()
 export class UsersService {
-    constructor(private prismaService: PrismaService) {}
+    constructor(private readonly prismaService: PrismaService) {}
 
     async getUserById(id: string, omitPassword?: true): Promise<Omit<User, "password">>;
     async getUserById(id: string, omitPassword?: false): Promise<User>;

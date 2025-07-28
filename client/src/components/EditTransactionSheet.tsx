@@ -28,7 +28,7 @@ type Props = {
     onSaveFn: (updatedTransaction: Transaction) => void;
 };
 
-export function EditTransactionSheet({ isOpen, initialTransaction, onCloseFn, onSaveFn }: Props) {
+export function EditTransactionSheet({ isOpen, initialTransaction, onCloseFn, onSaveFn }: Readonly<Props>) {
     const [transaction, setTransaction] = useState<Transaction | null>(initialTransaction);
 
     useEffect(() => {

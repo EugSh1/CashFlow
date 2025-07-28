@@ -15,7 +15,7 @@ export default function useDeleteWalletMutation(walletId: string) {
 
     const mutateWithToast = createMutateWithToast(mutateAsync, {
         loading: "Deleting wallet...",
-        success: (data) => `Wallet \"${data.name}\" deleted`
+        success: (data) => `Wallet "${data.name}" deleted`
     });
 
     return { deleteWallet: mutateWithToast };
