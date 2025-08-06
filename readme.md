@@ -53,11 +53,12 @@ a modern, intuitive interface.
 -   **Class Validator/Transformer**: Data validation.
 -   **Swagger**: API documentation and interactive API exploration.
 
-**Testing:**
+**DevOps & Testing:**
 
+-   **Docker & Docker Compose**: Containerization and orchestration.
 -   **Jest**: Backend unit testing.
 
-![Made with](https://go-skill-icons.vercel.app/api/icons?i=nextjs,tailwind,typescript,reactquery,shadcn,nodejs,nestjs,swagger,prisma,postgres,jest&theme=dark)
+![Made with](https://go-skill-icons.vercel.app/api/icons?i=nextjs,tailwind,typescript,reactquery,shadcn,nodejs,nestjs,swagger,prisma,postgres,jest,docker&theme=dark)
 
 ## Usage
 

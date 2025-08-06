@@ -1,0 +1,46 @@
+services:
+    frontend:
+        build:
+            context: ./client
+        ports:
+            - "3000:3000"
+        environment:
+            NEXT_PUBLIC_API_URL: http://localhost:4200
+            INTERNAL_API_URL: http://backend:4200
+        depends_on:
+            backend:
+                condition: service_healthy
+
+    backend:
+        build:
+            context: ./server
+        ports:
+            - "4200:4200"
+        environment:
+            DATABASE_URL: "postgresql://cashflow-admin:YOUR_PASSWORD@postgres:5432/cashflow"
+            JWT_SECRET: "YOUR_JWT_SECRET"
+            CLIENT_URL: "http://localhost:3000"
+        depends_on:
+            - postgres
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:4200/swagger"]
+            interval: 5s
+            timeout: 3s
+            retries: 5
+            start_period: 10s
+
+    postgres:
+        image: postgres:16
+        container_name: cashflow-postgres-demo
+        restart: always
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: "cashflow-admin"
+            POSTGRES_PASSWORD: "YOUR_PASSWORD"
+            POSTGRES_DB: "cashflow"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+
+volumes:
+    postgres_data:

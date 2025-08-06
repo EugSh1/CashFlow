@@ -26,7 +26,7 @@ async function bootstrap() {
         jsonDocumentUrl: "swagger/json"
     });
 
-    await app.listen(process.env.PORT ?? 4200);
+    await app.listen(process.env.PORT ?? 4200, "0.0.0.0");
 }
 
 void bootstrap();

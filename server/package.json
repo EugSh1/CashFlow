@@ -16,9 +16,7 @@
         "test": "JWT_SECRET=test jest",
         "test:watch": "jest --watch",
         "test:cov": "jest --coverage",
-        "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-        "db:start": "docker compose up -d",
-        "db:stop": "docker compose down"
+        "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
     },
     "dependencies": {
         "@nestjs/common": "^11.0.1",
