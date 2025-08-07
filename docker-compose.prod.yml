@@ -21,7 +21,8 @@ services:
             JWT_SECRET: "YOUR_JWT_SECRET"
             CLIENT_URL: "http://localhost:3000"
         depends_on:
-            - postgres
+            postgres:
+                condition: service_healthy
         healthcheck:
             test: ["CMD", "curl", "-f", "http://localhost:4200/swagger"]
             interval: 5s
@@ -41,6 +42,11 @@ services:
             POSTGRES_DB: "cashflow"
         volumes:
             - postgres_data:/var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U cashflow-admin -d cashflow"]
+            interval: 5s
+            timeout: 5s
+            retries: 5
 
 volumes:
     postgres_data:
