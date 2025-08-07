@@ -9,8 +9,8 @@
         "start:client": "cd client && pnpm run build && pnpm run start",
         "db:start": "docker compose up -d",
         "db:stop": "docker compose down",
-        "demo:start": "docker-compose -f docker-compose.prod.yml up --build -d",
-        "demo:stop": "docker-compose -f docker-compose.prod.yml down"
+        "demo:start": "docker compose -f docker-compose.prod.yml up --build -d",
+        "demo:stop": "docker compose -f docker-compose.prod.yml down"
     },
     "packageManager": "pnpm@10.12.1",
     "devDependencies": {

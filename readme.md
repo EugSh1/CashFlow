@@ -77,6 +77,30 @@ a modern, intuitive interface.
 5. **Collaboration**
     - Accept wallet invites and work together with others.
 
+### Running the Demo
+
+To quickly get a demo of the application up and running, you can use the provided npm scripts.
+
+**Prerequisites:**
+
+-   You must have Docker installed.
+
+**Commands:**
+
+-   To start the demo environment:
+
+    ```bash
+    pnpm run demo:start
+    ```
+
+    This will build and start the necessary services in detached mode.
+
+-   To stop the demo environment:
+    ```bash
+    pnpm run demo:stop
+    ```
+    This will stop the running containers.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
