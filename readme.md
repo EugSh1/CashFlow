@@ -29,7 +29,7 @@ a modern, intuitive interface.
 
 ## Screenshots
 
-![CashFlow screenshot](screenshots.jpeg)
+![CashFlow screenshot](screenshots.png)
 
 ## Technologies Used
 
