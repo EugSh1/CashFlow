@@ -52,6 +52,8 @@ a modern, intuitive interface.
 -   **Bcrypt**: Password hashing.
 -   **Class Validator/Transformer**: Data validation.
 -   **Swagger**: API documentation and interactive API exploration.
+-   **Helmet**: HTTP headers security middleware.
+-   **@nestjs/throttler**: Rate limiting for API protection.
 
 **DevOps & Testing:**
 
