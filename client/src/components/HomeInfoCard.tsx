@@ -15,7 +15,7 @@ type Props = {
     showTrends?: boolean;
 };
 
-export default function InfoCards({
+export function InfoCards({
     title,
     amount,
     description,

@@ -1,12 +1,12 @@
 import type { paths } from "@/apiTypes";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { createMutateWithToast } from "@/utils/createMutateWithToast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type Transaction =
     paths["/transactions/{transactionId}"]["delete"]["responses"]["200"]["content"]["application/json"];
 
-export default function useDeleteTransactionMutation(walletId: string) {
+export function useDeleteTransactionMutation(walletId: string) {
     const queryClient = useQueryClient();
     const { mutateAsync } = useMutation({
         mutationFn: async (transactionId: string) =>

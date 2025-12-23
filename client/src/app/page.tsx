@@ -1,4 +1,4 @@
-import FeatureCard from "@/components/FeatureCard";
+import { FeatureCard } from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import type { Feature } from "@/types";
 import { DollarSign, LayoutDashboard, TrendingUp, Trash2, Wallet, Users } from "lucide-react";

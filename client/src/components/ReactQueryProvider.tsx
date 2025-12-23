@@ -7,7 +7,7 @@ type Props = {
     children: ReactNode;
 };
 
-export default function ReactQueryProvider({ children }: Readonly<Props>) {
+export function ReactQueryProvider({ children }: Readonly<Props>) {
     const [queryClient] = useState(
         () =>
             new QueryClient({

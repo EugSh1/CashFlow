@@ -1,7 +1,7 @@
-import axiosInstance from "@/utils/axiosInstance";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import type { Wallet } from "@/types";
+import { axiosInstance } from "@/utils/axiosInstance";
 
 type Props = {
     params: Promise<{ id: string }>;

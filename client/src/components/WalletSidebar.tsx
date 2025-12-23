@@ -30,12 +30,12 @@ import {
     DropdownMenuSeparator
 } from "./ui/dropdown-menu";
 import { cookies } from "next/headers";
-import axiosInstance from "@/utils/axiosInstance";
 import type { User, Wallet } from "@/types";
-import LogOutDropdownMenuItem from "./LogOutDropdownMenuItem";
 import { redirect } from "next/navigation";
 import Avatar from "boring-avatars";
 import { avatarColors } from "@/constants";
+import { axiosInstance } from "@/utils/axiosInstance";
+import { LogOutDropdownMenuItem } from "./LogOutDropdownMenuItem";
 
 type MenuItem = {
     title: string;
@@ -73,7 +73,7 @@ const ownerMenuItems: MenuItem[] = [
     }
 ];
 
-export default async function WalletSidebar({ walletId }: Readonly<Props>) {
+export async function WalletSidebar({ walletId }: Readonly<Props>) {
     const cookieStore = cookies();
     const token = (await cookieStore).get("token")?.value;
     const tokenCookieHeader = { headers: { Cookie: `token=${token}` } };

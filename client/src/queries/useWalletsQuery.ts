@@ -1,11 +1,11 @@
 import type { Wallet } from "@/types";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { formatApiError } from "@/utils/formatApiError";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { toast } from "sonner";
 
-export default function useWalletsQuery() {
+export function useWalletsQuery() {
     const {
         data: wallets,
         isLoading,

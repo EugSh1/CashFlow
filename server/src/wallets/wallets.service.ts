@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { errorMessages } from "src/constants/errorMessages";
 import { PrismaService } from "src/prisma/prisma.service";
 import { isPrismaNotFoundError } from "src/utils/isPrismaNotFoundError";
-import whereOwnerOrHaveAccess from "src/utils/whereOwnerOrHaveAccess";
-import whereWalletOwnerOrHaveAccess from "src/utils/whereWalletOwnerOrHaveAccess";
+import { whereOwnerOrHaveAccess } from "src/utils/whereOwnerOrHaveAccess";
+import { whereWalletOwnerOrHaveAccess } from "src/utils/whereWalletOwnerOrHaveAccess";
 
 @Injectable()
 export class WalletsService {

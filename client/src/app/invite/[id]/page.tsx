@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import useAcceptInviteMutation from "@/queries/useAcceptInviteMutation";
+import { useAcceptInviteMutation } from "@/queries/useAcceptInviteMutation";
 import { useParams } from "next/navigation";
 
 export default function AcceptInvitePage() {

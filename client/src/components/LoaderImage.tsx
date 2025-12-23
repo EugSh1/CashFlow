@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function LoaderImage() {
+export function LoaderImage() {
     return (
         <Image
             width={75}

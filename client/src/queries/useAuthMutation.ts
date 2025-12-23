@@ -1,8 +1,7 @@
-import axiosInstance from "@/utils/axiosInstance";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 import type { paths } from "@/apiTypes";
 import { createMutateWithToast } from "@/utils/createMutateWithToast";
+import { axiosInstance } from "@/utils/axiosInstance";
 
 type CreateUserFields = paths["/auth/login"]["post"]["requestBody"]["content"]["application/json"];
 
@@ -12,9 +11,7 @@ type ActionData = Record<
     Record<"loadingMessage" | "successMessage" | "redirectPath", string>
 >;
 
-export default function useAuthMutation(action: Action) {
-    const router = useRouter();
-
+export function useAuthMutation(action: Action) {
     const actionData: ActionData = {
         register: {
             loadingMessage: "Creating an account...",
@@ -32,7 +29,7 @@ export default function useAuthMutation(action: Action) {
         mutationFn: async (data: CreateUserFields) =>
             await axiosInstance.post(`/auth/${action}`, data),
         onSuccess: () => {
-            router.replace(actionData[action].redirectPath);
+            window.location.href = actionData[action].redirectPath;
         }
     });
 

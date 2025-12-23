@@ -16,7 +16,7 @@ type Props = {
       }
 );
 
-export default function FloatingCreateButton(props: Readonly<Props>) {
+export function FloatingCreateButton(props: Readonly<Props>) {
     return (
         <Tooltip>
             <TooltipTrigger asChild>

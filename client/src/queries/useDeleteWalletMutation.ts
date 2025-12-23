@@ -1,10 +1,10 @@
 import type { Wallet } from "@/types";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { createMutateWithToast } from "@/utils/createMutateWithToast";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
-export default function useDeleteWalletMutation(walletId: string) {
+export function useDeleteWalletMutation(walletId: string) {
     const router = useRouter();
     const { mutateAsync } = useMutation({
         mutationFn: async () => await axiosInstance.delete<Wallet>(`/wallets/${walletId}`),

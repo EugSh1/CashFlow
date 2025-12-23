@@ -1,11 +1,11 @@
 import type { Invite } from "@/types";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { formatApiError } from "@/utils/formatApiError";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { toast } from "sonner";
 
-export default function useInvitesQuery(walletId: string) {
+export function useInvitesQuery(walletId: string) {
     const {
         data: invites,
         isLoading,

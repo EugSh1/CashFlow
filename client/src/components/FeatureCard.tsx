@@ -5,7 +5,7 @@ type Props = {
     feature: Feature;
 };
 
-export default function FeatureCard({ feature }: Readonly<Props>) {
+export function FeatureCard({ feature }: Readonly<Props>) {
     const { title, description, Icon } = feature;
 
     return (

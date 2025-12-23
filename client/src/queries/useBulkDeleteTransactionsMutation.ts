@@ -1,12 +1,12 @@
 import type { paths } from "@/apiTypes";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { createMutateWithToast } from "@/utils/createMutateWithToast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type Count =
     paths["/transactions/bulk-delete"]["post"]["responses"]["200"]["content"]["application/json"];
 
-export default function useBulkDeleteTransactionMutation(walletId: string) {
+export function useBulkDeleteTransactionMutation(walletId: string) {
     const queryClient = useQueryClient();
     const { mutateAsync } = useMutation({
         mutationFn: async (transactionIds: string[]) =>

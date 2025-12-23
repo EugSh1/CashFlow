@@ -1,10 +1,10 @@
 import { ForbiddenException, Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "src/prisma/prisma.service";
 import { isPrismaNotFoundError } from "src/utils/isPrismaNotFoundError";
-import whereWalletOwnerOrHaveAccess from "src/utils/whereWalletOwnerOrHaveAccess";
 import { WalletsService } from "src/wallets/wallets.service";
 import { TransactionDto } from "./dto/create-transaction.dto";
 import { errorMessages } from "src/constants/errorMessages";
+import { whereWalletOwnerOrHaveAccess } from "src/utils/whereWalletOwnerOrHaveAccess";
 
 @Injectable()
 export class TransactionsService {

@@ -12,8 +12,8 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN pnpx prisma generate && pnpm run build
+RUN pnpm run prisma:generate && pnpm run build
 
 EXPOSE 4200
 
-CMD ["sh", "-c", "pnpm prisma migrate deploy && pnpm run start:prod"]
+CMD ["sh", "-c", "pnpm run prisma:migrate-deploy && pnpm run start:prod"]

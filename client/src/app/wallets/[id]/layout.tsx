@@ -1,5 +1,5 @@
-import WalletSidebar from "@/components/WalletSidebar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { WalletSidebar } from "@/components/WalletSidebar";
 import type { ReactNode } from "react";
 
 type Props = {

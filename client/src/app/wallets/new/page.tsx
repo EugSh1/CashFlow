@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import useCreateWalletMutation from "@/queries/useCreateWalletMutation";
+import { useCreateWalletMutation } from "@/queries/useCreateWalletMutation";
 import { type FormEvent, useState } from "react";
 
 export default function CreateWalletPage() {

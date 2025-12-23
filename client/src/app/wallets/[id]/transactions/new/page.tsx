@@ -11,7 +11,7 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/components/ui/select";
-import useCreateTransactionMutation from "@/queries/useCreateTransactionMutation";
+import { useCreateTransactionMutation } from "@/queries/useCreateTransactionMutation";
 import type { NewTransaction } from "@/types";
 import { useParams } from "next/navigation";
 import { type FormEvent, useState } from "react";

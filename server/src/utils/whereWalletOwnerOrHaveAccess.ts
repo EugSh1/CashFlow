@@ -1,4 +1,4 @@
-export default function whereWalletOwnerOrHaveAccess(userId: string) {
+export function whereWalletOwnerOrHaveAccess(userId: string) {
     return {
         OR: [
             { wallet: { ownerId: userId } },

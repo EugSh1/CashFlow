@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import useDeleteWalletMutation from "@/queries/useDeleteWalletMutation";
-import useWalletQuery from "@/queries/useWalletQuery";
+import { useDeleteWalletMutation } from "@/queries/useDeleteWalletMutation";
+import { useWalletQuery } from "@/queries/useWalletQuery";
 import { useParams } from "next/navigation";
 import { type FormEvent, useState } from "react";
 

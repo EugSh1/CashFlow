@@ -1,5 +1,5 @@
 import type { paths } from "@/apiTypes";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { formatApiError } from "@/utils/formatApiError";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
@@ -8,7 +8,7 @@ import { toast } from "sonner";
 type TransactionsResponse =
     paths["/transactions"]["get"]["responses"]["200"]["content"]["application/json"];
 
-export default function useTransactionsQuery(walletId: string) {
+export function useTransactionsQuery(walletId: string) {
     const {
         data,
         isFetching,

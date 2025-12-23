@@ -1,8 +1,6 @@
 "use client";
 
-import useDeleteTransactionMutation from "@/queries/useDeleteTransactionMutation";
 import { useState, memo, useCallback } from "react";
-import useBulkDeleteTransactionMutation from "@/queries/useBulkDeleteTransactionsMutation";
 import type { Transaction } from "@/types";
 import {
     Table,
@@ -28,6 +26,8 @@ import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { cn } from "@/utils/cn";
 import { createPortal } from "react-dom";
+import { useDeleteTransactionMutation } from "@/queries/useDeleteTransactionMutation";
+import { useBulkDeleteTransactionMutation } from "@/queries/useBulkDeleteTransactionsMutation";
 
 type Props = {
     data: Transaction[];
@@ -131,7 +131,7 @@ const TransactionRow = memo(
     }
 );
 
-export default function TransactionsTable({ data, walletId, editTransactionFn }: Readonly<Props>) {
+export function TransactionsTable({ data, walletId, editTransactionFn }: Readonly<Props>) {
     const { bulkDeleteTransactions } = useBulkDeleteTransactionMutation(walletId);
     const [selectedTransactionIds, setSelectedTransactionIds] = useState<string[]>([]);
 

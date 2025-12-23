@@ -28,7 +28,7 @@ type AuthFormContent = Record<
     >
 >;
 
-export default function AuthForm({ type, onSubmitFn }: Readonly<Props>) {
+export function AuthForm({ type, onSubmitFn }: Readonly<Props>) {
     const authFormContent: AuthFormContent = {
         register: {
             title: "Create an account",

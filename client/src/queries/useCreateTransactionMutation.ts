@@ -1,10 +1,10 @@
 import type { NewTransaction, Transaction } from "@/types";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { createMutateWithToast } from "@/utils/createMutateWithToast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
-export default function useCreateTransactionMutation(walletId: string) {
+export function useCreateTransactionMutation(walletId: string) {
     const router = useRouter();
     const queryClient = useQueryClient();
     const { mutateAsync } = useMutation({

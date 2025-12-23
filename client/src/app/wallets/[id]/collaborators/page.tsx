@@ -1,6 +1,5 @@
 "use client";
 
-import FloatingCreateButton from "@/components/FloatingCreateButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,17 +11,18 @@ import {
     TableRow
 } from "@/components/ui/table";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import useCreateInviteMutation from "@/queries/useCreateInviteMutation";
-import useDeleteInviteMutation from "@/queries/useDeleteInviteMutation";
-import useInvitesQuery from "@/queries/useInvitesQuery";
-import useRemoveUserWalletAccess from "@/queries/useRemoveUserWalletAccess";
-import useUsersWalletAccessQuery from "@/queries/useUsersWalletAccessQuery";
 import { cn } from "@/utils/cn";
 import { Trash2 } from "lucide-react";
 import { useParams } from "next/navigation";
 import Avatar from "boring-avatars";
 import { avatarColors } from "@/constants";
-import BlockLoader from "@/components/BlockLoader";
+import { useInvitesQuery } from "@/queries/useInvitesQuery";
+import { useUsersWalletAccessQuery } from "@/queries/useUsersWalletAccessQuery";
+import { useCreateInviteMutation } from "@/queries/useCreateInviteMutation";
+import { useDeleteInviteMutation } from "@/queries/useDeleteInviteMutation";
+import { useRemoveUserWalletAccess } from "@/queries/useRemoveUserWalletAccess";
+import { BlockLoader } from "@/components/BlockLoader";
+import { FloatingCreateButton } from "@/components/FloatingCreateButton";
 
 export default function CollaboratorsPage() {
     const { id } = useParams<{ id: string }>();

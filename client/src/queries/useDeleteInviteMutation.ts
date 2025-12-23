@@ -1,9 +1,9 @@
 import type { Invite } from "@/types";
-import axiosInstance from "@/utils/axiosInstance";
+import { axiosInstance } from "@/utils/axiosInstance";
 import { createMutateWithToast } from "@/utils/createMutateWithToast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export default function useDeleteInviteMutation(walletId: string) {
+export function useDeleteInviteMutation(walletId: string) {
     const queryClient = useQueryClient();
     const { mutateAsync } = useMutation({
         mutationFn: async (inviteId: string) =>

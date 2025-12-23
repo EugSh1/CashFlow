@@ -1,11 +1,11 @@
 "use client";
 
-import FullPageLoader from "@/components/FullPageLoader";
+import { FullPageLoader } from "@/components/FullPageLoader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { avatarColors } from "@/constants";
-import useLogOutMutation from "@/queries/useLogOutMutation";
-import useUserQuery from "@/queries/useUserQuery";
+import { useLogOutMutation } from "@/queries/useLogOutMutation";
+import { useUserQuery } from "@/queries/useUserQuery";
 import Avatar from "boring-avatars";
 import Link from "next/link";
 

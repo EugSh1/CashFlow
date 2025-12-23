@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
-import TanstackQueryProvider from "@/components/ReactQueryProvider";
+import { ReactQueryProvider } from "@/components/ReactQueryProvider";
 
 export const metadata: Metadata = {
     title: "CashFlow",
@@ -19,7 +19,7 @@ export default function RootLayout({
         <html lang="en">
             <body className="antialiased">
                 <NextTopLoader color="var(--primary)" showSpinner={false} />
-                <TanstackQueryProvider>{children}</TanstackQueryProvider>
+                <ReactQueryProvider>{children}</ReactQueryProvider>
                 <Toaster position="bottom-right" />
             </body>
         </html>

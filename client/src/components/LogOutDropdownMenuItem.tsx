@@ -1,10 +1,10 @@
 "use client";
 
-import useLogOutMutation from "@/queries/useLogOutMutation";
+import { useLogOutMutation } from "@/queries/useLogOutMutation";
 import { DropdownMenuItem } from "./ui/dropdown-menu";
 import { LogOut } from "lucide-react";
 
-export default function LogOutDropdownMenuItem() {
+export function LogOutDropdownMenuItem() {
     const { logOut } = useLogOutMutation();
     return (
         <DropdownMenuItem onClick={() => logOut()} className="cursor-pointer">
